@@ -1,6 +1,6 @@
-import personel 
+from personel import Personel 
 
-class Doktor(personel):
+class Doktor(Personel):
     def __init__(self, personel_no, ad, soyad, departman, maas, uzmanlik, deneyim_yili, hastane):
         super().__init__(personel_no, ad, soyad, departman, maas)
         self.uzmanlik= uzmanlik
