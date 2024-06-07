@@ -7,7 +7,11 @@ class Doktor(Personel):
         self.deneyim_yili= deneyim_yili
         self.hastane= hastane
 
-    def maas_arttir():
-        if deneyim_yili >= 5 :
-            maas = maas + (maas*0,5)
-#           return maas
+    def __str__(self):
+        return f"Personel numarasi: {self.personel_no}, Ad-Soyad: {self.ad} {self.soyad},
+        Departman: {self.departman}, Maas: {self.maas}, Uzmanlik: {self.uzmanlik}, 
+        Deneyim yili: {self.deneyim_yili}, Hastane: {self.hastane}"
+
+    @property
+    def doktor(self):
+        return 

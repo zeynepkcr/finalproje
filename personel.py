@@ -27,4 +27,4 @@ class Personel:
         self.maas= maas
 
     def __str__(self):
-        return f"{self.personel_no} / {self.ad} {self.soyad} / {self.departman} / {self.maas}"
+        return f"Personel numarasi: {self.personel_no}, Ad-soyad: {self.ad} {self.soyad}, Departman: {self.departman}, Maas: {self.maas}"
