@@ -1,3 +1,4 @@
+#hasta sınıfını oluşturuyoruz
 class Hasta:
     def __init__(self, hasta_no, ad, soyad, dogum_tarihi, hastalik, tedavi):
         self._hasta_no= hasta_no
@@ -6,7 +7,7 @@ class Hasta:
         self._dogum_tarihi= dogum_tarihi
         self._hastalik= hastalik
         self._tedavi= tedavi
-    
+    #hasta sınıfının özellikleri için get ve set metotlarını ekliyoruz
     @property
     def hasta_no(self):
         return self._hasta_no
