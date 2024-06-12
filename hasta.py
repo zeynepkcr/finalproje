@@ -1,57 +1,56 @@
 class Hasta:
     def __init__(self, hasta_no, ad, soyad, dogum_tarihi, hastalik, tedavi):
-        self.hasta_no= hasta_no
-        self.ad= ad
-        self.soyad= soyad
-        self.dogum_tarihi= dogum_tarihi
-        self.hastalik= hastalik
-        self.tedavi= tedavi
-
-    def __str__(self):
-        return f"Hasta numarasi: {self.hasta_no}, Ad-Soyad: {self.ad}  {self.soyad}, 
-        Dogum tarihi: {self.dogum_tarihi}, Hastalik: {self.hastalik}, Tedavi: {self.tedavi})"
+        self._hasta_no= hasta_no
+        self._ad= ad
+        self._soyad= soyad
+        self._dogum_tarihi= dogum_tarihi
+        self._hastalik= hastalik
+        self._tedavi= tedavi
     
     @property
     def hasta_no(self):
-        return self.hasta_no
+        return self._hasta_no
     @hasta_no.setter
     def hasta_no(self, value):
-        if value<=0 or len(value)<4:
+        if value<=0:
             raise ValueError("4 haneli hasta numarasini giriniz.")
-        self.hasta_no = value
+        self._hasta_no = value
 
     @property
     def ad(self):
-        return self.ad
+        return self._ad
     @ad.setter
     def ad(self, value):
-        self.ad = value
+        self._ad = value
 
     @property
     def soyad(self):
-        return self.soyad
+        return self._soyad
     @soyad.setter
     def soyad(self, value):
-        self.soyad = value
+        self._soyad = value
 
     @property
     def dogum_tarihi(self):
-        return self.dogum_tarihi
+        return self._dogum_tarihi
     @dogum_tarihi.setter
     def dogum_tarihi(self, value):
-        self.dogum_tarihi = value
+        self._dogum_tarihi = value
 
     @property
     def hastalik(self):
-        return self.hastalik
+        return self._hastalik
     @hastalik.setter
     def hastalik(self, value):
-        self.hastalik = value
+        self._hastalik = value
 
     @property
     def tedavi(self):
-        return self.tedavi
+        return self._tedavi
     @tedavi.setter
     def tedavi(self, value):
-        self.tedavi = value
+        self._tedavi = value
+
+    def __str__(self):
+        return f"Hasta numarasi: {self._hasta_no}, Ad-Soyad: {self._ad}  {self._soyad}, Dogum tarihi: {self._dogum_tarihi}, Hastalik: {self._hastalik}, Tedavi: {self._tedavi})"
     

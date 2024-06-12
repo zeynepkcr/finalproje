@@ -3,76 +3,74 @@ from personel import Personel
 class Doktor(Personel):
     def __init__(self, personel_no, ad, soyad, departman, maas, uzmanlik, deneyim_yili, hastane):
         super().__init__(personel_no, ad, soyad, departman, maas)
-        self.uzmanlik= uzmanlik
-        self.deneyim_yili= deneyim_yili
-        self.hastane= hastane
-
-    def __str__(self):
-        return f"Personel numarasi: {self.personel_no}, Ad-Soyad: {self.ad} {self.soyad},
-        Departman: {self.departman}, Maas: {self.maas}, Uzmanlik: {self.uzmanlik}, 
-        Deneyim yili: {self.deneyim_yili}, Hastane: {self.hastane}"
+        self._uzmanlik= uzmanlik
+        self._deneyim_yili= deneyim_yili
+        self._hastane= hastane
 
     @property
     def personel_no(self):
-        return self.personel_no
+        return self._personel_no
     @personel_no.setter
     def personel_no(self, value):
-        if value==0 or len(value)<4:
+        if value==0:
             raise ValueError("4 haneli personel numarasini giriniz.")
-        self.personel_no= value
+        self._personel_no= value
 
     @property
     def ad(self):
-        return self.ad
+        return self._ad
     @ad.setter
     def ad(self, value):
-        self.ad = value
+        self._ad = value
     
     @property
     def soyad(self):
-        return self.soyad
+        return self._soyad
     @soyad.setter
     def soyad(self, value):
-        self.soyad = value
+        self._soyad = value
     
     @property
     def departman(self):
-        return self.departman
+        return self._departman
     @departman.setter
     def departman(self, value):
-        self.departman = value
+        self._departman = value
     
     @property
     def maas(self):
-        return self.maas
+        return self._maas
     @maas.setter
     def maas(self, value):
         if value<=0:
             raise ValueError("Gecerli bir maas degeri giriniz.")
-        self.maas = value
+        self._maas = value
     
     @property
     def uzmanlik(self):
-        return self.uzmanlik
+        return self._uzmanlik
     @uzmanlik.setter
     def uzmanlik(self, value):
-        self.uzmanlik = value
+        self._uzmanlik = value
     
     @property
     def deneyim_yili(self):
-        return self.deneyim_yili
+        return self._deneyim_yili
     @deneyim_yili.setter
     def deneyim_yili(self, value):
         if value<0:
             raise ValueError("Deneyim yili sifirdan kucuk olamaz.")
-        self.deneyim_yili = value
+        self._deneyim_yili = value
     
     @property
     def hastane(self):
-        return self.hastane
+        return self._hastane
     @hastane.setter
     def hastane(self, value):
-        self.hastane = value
+        self._hastane = value
+
+    def __str__(self):
+        return f"Personel numarasi: {self._personel_no}, Ad-Soyad: {self._ad} {self._soyad}, Departman: {self._departman}, Maas: {self._maas}, Uzmanlik: {self._uzmanlik}, Deneyim yili: {self._deneyim_yili}, Hastane: {self._hastane}"
     
     
     

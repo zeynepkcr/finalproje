@@ -20,50 +20,50 @@ engelleyerek veri kapsüllemeyi (encapsulation) sağlar.'''
 
 class Personel:
     def __init__(self, personel_no, ad, soyad, departman, maas):
-        self.personel_no= personel_no
-        self.ad= ad
-        self.soyad= soyad
-        self.departman= departman
-        self.maas= maas
-
-    def __str__(self):
-        return f"Personel numarasi: {self.personel_no}, Ad-soyad: {self.ad} {self.soyad}, Departman: {self.departman}, Maas: {self.maas}"
+        self._personel_no= personel_no
+        self._ad= ad
+        self._soyad= soyad
+        self._departman= departman
+        self._maas= maas
     
     @property
     def personel_no(self):
-        return self.personel_no
+        return self._personel_no
     @personel_no.setter
     def personel_no(self, value):
-        if value==0 or len(value)<4:
+        if value==0:
             raise ValueError("4 haneli personel numarasini giriniz.")
-        self.personel_no= value
+        self._personel_no= value
 
     @property
     def ad(self):
-        return self.ad
+        return self._ad
     @ad.setter
     def ad(self, value):
-        self.ad = value
+        self._ad = value
     
     @property
     def soyad(self):
-        return self.soyad
+        return self._soyad
     @soyad.setter
     def soyad(self, value):
-        self.soyad = value
+        self._soyad = value
     
     @property
     def departman(self):
-        return self.departman
+        return self._departman
     @departman.setter
     def departman(self, value):
-        self.departman = value
+        self._departman = value
     
     @property
     def maas(self):
-        return self.maas
+        return self._maas
     @maas.setter
     def maas(self, value):
         if value<=0:
             raise ValueError("Gecerli bir maas degeri giriniz.")
-        self.maas = value
+        self._maas = value
+
+    def __str__(self):
+        return f"Personel numarasi: {self._personel_no}, Ad-soyad: {self._ad} {self._soyad}, Departman: {self._departman}, Maas: {self._maas}"
