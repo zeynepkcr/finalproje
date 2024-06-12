@@ -48,3 +48,7 @@ class Personel:
 #personel sınıfı özelliklerini str metodu ile yazdırıyoruz
     def __str__(self):
         return f"Personel numarasi: {self._personel_no}, Ad-soyad: {self._ad} {self._soyad}, Departman: {self._departman}, Maas: {self._maas}"
+    
+    def maas_arttir(self, oran):
+        yeni_maas= self.maas()*(1+oran/100)
+        self.maas(yeni_maas)

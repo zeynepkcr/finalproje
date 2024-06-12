@@ -74,3 +74,7 @@ class Hemsire (Personel):
         return (f"Personel numarasi: {self._personel_no}, Ad-Soyad. {self._ad} {self._soyad}"
                f"Departman: {self._departman}, Maas: {self._maas}, Toplam calisma saati: {self._calisma_saati}"
                f"Sertifika: {self._sertifika}, Hastane: {self._hastane}")
+
+    def maas_arttir(self, oran):
+        yeni_maas= self.maas()*(1+oran/100)
+        self.maas(yeni_maas)
