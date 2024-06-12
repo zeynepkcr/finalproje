@@ -1,3 +1,4 @@
+#personel sınıfını oluşturuyoruz
 class Personel:
     def __init__(self, personel_no, ad, soyad, departman, maas):
         self._personel_no= personel_no
@@ -5,7 +6,7 @@ class Personel:
         self._soyad= soyad
         self._departman= departman
         self._maas= maas
-    
+    #personel sınıfı özelliklerini get metodu ile alıp set metodu ile işliyoruz
     @property
     def personel_no(self):
         return self._personel_no
@@ -44,6 +45,6 @@ class Personel:
         if value<=0:
             raise ValueError("Gecerli bir maas degeri giriniz.")
         self._maas = value
-
+#personel sınıfı özelliklerini str metodu ile yazdırıyoruz
     def __str__(self):
         return f"Personel numarasi: {self._personel_no}, Ad-soyad: {self._ad} {self._soyad}, Departman: {self._departman}, Maas: {self._maas}"

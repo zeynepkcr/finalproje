@@ -2,8 +2,9 @@ from hasta import Hasta
 from personel import Personel
 from doktor import Doktor
 from hemsire import Hemsire
-
+#diğer modüllerdeki sınıflara atıfta bulunabilmek için import ediyoruz
 try:
+    #sınıflara ait örnekler oluşturuyoruz
     personel1 = Personel(1452, "Ahmet", "Soyak", "Ortopedi", 20000)
     personel2 = Personel(5789, "Sinem", "Acar", "Kardiyoloji", 20000)
 
@@ -19,21 +20,21 @@ try:
     hasta2 = Hasta(1022, "Ayşe", "Demir", "15.05.1990", "Diyabet", "İnsülin Tedavisi")
     hasta3 = Hasta(1037, "Ali", "Kaya", "20.08.1975", "Hipertansiyon", "Diyet ve Egzersiz")
 
-    # Personel örneklerini yazdır
+    # Personel örneklerini yazdırıyoruz
     print(personel1)
     print(personel2)
 
-    # Doktor örneklerini yazdır
+    # Doktor örneklerini yazdırıyoruz
     print(doktor1)
     print(doktor2)
     print(doktor3)
 
-    # Hemşire örneklerini yazdır
+    # Hemşire örneklerini yazdırıyoruz
     print(hemsire1)
     print(hemsire2)
     print(hemsire3)
 
-    # Hasta örneklerini yazdır
+    # Hasta örneklerini yazdırıyoruz
     print(hasta1)
     print(hasta2)
     print(hasta3)
@@ -64,35 +65,35 @@ try:
 
     df = pd.DataFrame(data, columns=columns)
 
-    # Boş olan değişken değerleri için 0 atama
+    # Boş olan değişken değerleri için 0 atıyoruz
     df.fillna(0, inplace=True)
 
-    # Doktorları uzmanlık alanlarına göre gruplandırarak toplam sayısını hesaplama
+    # Doktorları uzmanlık alanlarına göre gruplandırarak toplam sayısını hesaplıyoruz
     doktor_gruplama = df[df["uzmanlik"] != 0].groupby("uzmanlik").size()
     print("Uzmanlik alanlarina göre doktor sayisi:")
     print(doktor_gruplama)
 
-    # 5 yıldan fazla deneyime sahip doktorların toplam sayısını bulma
+    # 5 yıldan fazla deneyime sahip doktorların toplam sayısını buluyoruz
     deneyim = df[(df["deneyim_yili"] > 5) & (df["deneyim_yili"] != 0)]
     print("\n5 yildan fazla deneyime sahip doktor sayisi:", len(deneyim))
 
-    # Hasta adına göre DataFrame'i alfabetik olarak sıralama
+    # Hasta adına göre DataFrame'i alfabetik olarak sıralıyoruz
     alfabetik_hasta = df[df["hasta_no"] != 0].sort_values("ad")
     print("\nHasta adina göre alfabetik siralama:")
     print(alfabetik_hasta)
 
-    # Maaşı 7000 TL üzerinde olan personelleri bulma
+    # Maaşı 7000 TL üzerinde olan personelleri buluyoruz
     maas_yuksek_personel = df[df["maas"] > 7000]
     print("\nMaaşi 7000 TL üzerinde olan personeller:")
     print(maas_yuksek_personel)
 
-    # Doğum tarihi 1990 ve sonrası olan hastaları gösterme
+    # Doğum tarihi 1990 ve sonrası olan hastaları buluyoruz
     df["dogum_tarihi"] = pd.to_datetime(df["dogum_tarihi"], errors='coerce', format='%d.%m.%Y')
     dogum_1990_sonrasi = df[(df["dogum_tarihi"] >= '1990-01-01') & (df["dogum_tarihi"] != 0)]
     print("\nDoğum tarihi 1990 ve sonrasi olan hastalar:")
     print(dogum_1990_sonrasi)
 
-    # Var olan DataFrame'den ad, soyad, departman, maas, uzmanlik, deneyim_yili, hastalik, tedavi bilgilerini içeren yeni bir DataFrame elde etme
+    # Var olan DataFrame'den ad, soyad, departman, maas, uzmanlik, deneyim_yili, hastalik, tedavi bilgilerini içeren yeni bir DataFrame elde ediyoruz
     yeni_df = df[["ad", "soyad", "departman", "maas", "uzmanlik", "deneyim_yili", "hastalik", "tedavi"]]
     print("\nYeni DataFrame:")
     print(yeni_df)

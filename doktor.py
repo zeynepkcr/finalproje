@@ -1,12 +1,12 @@
 from personel import Personel 
-
+#personel modülünü import edip kalıtım yoluya doktor sınıfını oluşturuyoruz
 class Doktor(Personel):
     def __init__(self, personel_no, ad, soyad, departman, maas, uzmanlik, deneyim_yili, hastane):
         super().__init__(personel_no, ad, soyad, departman, maas)
         self._uzmanlik= uzmanlik
         self._deneyim_yili= deneyim_yili
         self._hastane= hastane
-
+#doktor sınıfı özelliklerine get ve set metodu ile düzenliyoruz
     @property
     def personel_no(self):
         return self._personel_no
@@ -68,7 +68,7 @@ class Doktor(Personel):
     @hastane.setter
     def hastane(self, value):
         self._hastane = value
-
+#str metoduyla yazdırıyoruz
     def __str__(self):
         return f"Personel numarasi: {self._personel_no}, Ad-Soyad: {self._ad} {self._soyad}, Departman: {self._departman}, Maas: {self._maas}, Uzmanlik: {self._uzmanlik}, Deneyim yili: {self._deneyim_yili}, Hastane: {self._hastane}"
     

@@ -1,12 +1,13 @@
 from personel import Personel
-
+#personel modülünü import edip personel sınıfından kalıtım yoluyla hemşire sınıfını oluşturuyorz
 class Hemsire (Personel):
     def __init__(self, personel_no, ad, soyad, departman, maas, calisma_saati, sertifika, hastane):
         super().__init__(personel_no, ad,soyad, departman, maas)
+        #super metodu üst sınıfın özelliklerini buraya ekliyor
         self._calisma_saati= calisma_saati
         self._sertifika= sertifika
         self._hastane= hastane
-    
+    #hemşire sınıfı özelliklerini get ve set metotlarıyla işliyoruz
     @property
     def personel_no(self):
         return self._personel_no
@@ -68,7 +69,7 @@ class Hemsire (Personel):
     @hastane.setter
     def hastane(self, value):
         self._hastane = value
-
+#str metoduyla yazdırıyoruz
     def __str__(self):
         return (f"Personel numarasi: {self._personel_no}, Ad-Soyad. {self._ad} {self._soyad}"
                f"Departman: {self._departman}, Maas: {self._maas}, Toplam calisma saati: {self._calisma_saati}"

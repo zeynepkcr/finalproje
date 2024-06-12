@@ -51,7 +51,7 @@ class Hasta:
     @tedavi.setter
     def tedavi(self, value):
         self._tedavi = value
-
+#özellikleri str metodu ile yazdırıyoruz
     def __str__(self):
         return f"Hasta numarasi: {self._hasta_no}, Ad-Soyad: {self._ad}  {self._soyad}, Dogum tarihi: {self._dogum_tarihi}, Hastalik: {self._hastalik}, Tedavi: {self._tedavi})"
     
