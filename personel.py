@@ -28,3 +28,42 @@ class Personel:
 
     def __str__(self):
         return f"Personel numarasi: {self.personel_no}, Ad-soyad: {self.ad} {self.soyad}, Departman: {self.departman}, Maas: {self.maas}"
+    
+    @property
+    def personel_no(self):
+        return self.personel_no
+    @personel_no.setter
+    def personel_no(self, value):
+        if value==0 or len(value)<4:
+            raise ValueError("4 haneli personel numarasini giriniz.")
+        self.personel_no= value
+
+    @property
+    def ad(self):
+        return self.ad
+    @ad.setter
+    def ad(self, value):
+        self.ad = value
+    
+    @property
+    def soyad(self):
+        return self.soyad
+    @soyad.setter
+    def soyad(self, value):
+        self.soyad = value
+    
+    @property
+    def departman(self):
+        return self.departman
+    @departman.setter
+    def departman(self, value):
+        self.departman = value
+    
+    @property
+    def maas(self):
+        return self.maas
+    @maas.setter
+    def maas(self, value):
+        if value<=0:
+            raise ValueError("Gecerli bir maas degeri giriniz.")
+        self.maas = value
