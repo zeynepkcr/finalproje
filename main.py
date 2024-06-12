@@ -73,9 +73,9 @@ deneyim = df[(df["deneyim_yili"] > 5) & (df["deneyim_yili"] != 0)]
 print("\n5 yildan fazla deneyime sahip doktor sayisi:", len(deneyim))
 
 # Hasta adına göre DataFrame'i alfabetik olarak sıralama
-df_sorted_hasta = df[df["hasta_no"] != 0].sort_values("ad")
+alfabetik_hasta = df[df["hasta_no"] != 0].sort_values("ad")
 print("\nHasta adina göre alfabetik siralama:")
-print(df_sorted_hasta)
+print(alfabetik_hasta)
 
 # Maaşı 7000 TL üzerinde olan personelleri bulma
 maas_yuksek_personel = df[df["maas"] > 7000]
